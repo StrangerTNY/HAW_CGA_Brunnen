@@ -12,7 +12,7 @@ import PlantFromFile from './objects/PlantFromFile.js';
 import Floor from './objects/Floor.js';
 import Physics from './physics/Physics.js';
 
-// Event functions
+// Event FUNKTIONEN!!!1!11!!!
 import {updateAspectRatio} from './eventfunctions/updateAspectRatio.js';
 import {executeRaycast} from './eventfunctions/executeRaycast.js';
 import {keyDownAction, keyUpAction} from './eventfunctions/executeKeyAction.js';
