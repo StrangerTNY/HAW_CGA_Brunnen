@@ -11,6 +11,7 @@ import TableFromFile from './objects/TableFromFile.js';
 import PlantFromFile from './objects/PlantFromFile.js';
 import Floor from './objects/Floor.js';
 import Physics from './physics/Physics.js';
+import Brunnen from "./objects/Brunnen.js";
 
 // Event FUNKTIONEN!!!1!11!!!
 import {updateAspectRatio} from './eventfunctions/updateAspectRatio.js';
@@ -38,9 +39,9 @@ function main() {
 
   document.getElementById('3d_content').appendChild(window.renderer.domElement);
 
- // const brunnen = new Brunnen();
-  //brunnen.position.set(0,0,0);
-  //window.scene.add(brunnen);
+  const brunnen = new Brunnen();
+  brunnen.position.set(0,0,0);
+  window.scene.add(brunnen);
 
   const television = new Television();
   television.position.set(-30, 55.8, 0);
