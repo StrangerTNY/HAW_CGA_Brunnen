@@ -1,27 +1,3 @@
-import * as THREE from 'three';
-import * as TWEEN from 'tween';
-import CSG from 'csg';
-
-import {GridShader} from '../shaders/GridShader.js';
-
-import {Animation, AnimationType, AnimationAxis} from '../animation/Animation.js';
-
-export default class Brunnen extends THREE.Group {
-
-  constructor() {
-    super();
-
-    this.animations = [];
-    this.addParts();
-  }
-
-  addParts() {
-
-    const brunnenGeometry = new THREE.CylinderGeometry(5, 5, 5, 8, 1);
-    const brunnenMaterial = new THREE.MeshBasicMaterial({color: 0x0000ff, wireframe: true});
-    const brunnen = new THREE.Mesh(this.brunnenGeometry, this.brunnenMaterialn);
-    brunnen.position.set(0, 0, 0);
-    window.scene.add(brunnen);
-
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e95ae4414052c8ad42c2d926d0d720c71dabaf64160e36754c473383e00a8679
+size 2031

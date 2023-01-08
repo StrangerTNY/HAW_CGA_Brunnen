@@ -1,27 +1,3 @@
-const ColorShader = {
-
-  vertexShader: [
-
-    'void main() {',
-
-    '  gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );',
-
-    '}'
-
-  ].join('\n'),
-
-  fragmentShader: [
-
-    'uniform vec3 color;',
-
-    'void main() {',
-
-    '  gl_FragColor = vec4( color, 1.0 );',  // RGB ALPHA
-
-    '}'
-
-  ].join('\n')
-
-};
-
-export {ColorShader};
+version https://git-lfs.github.com/spec/v1
+oid sha256:69efdf9f2f746dfbbfa57de5e34c5fe18323bd7187c1bef217a1ff2905f46dae
+size 354
