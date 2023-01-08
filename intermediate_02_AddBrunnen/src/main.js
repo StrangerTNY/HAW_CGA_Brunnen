@@ -60,9 +60,14 @@ function main() {
   tableFromFile.addPhysics();
   window.scene.add(tableFromFile);
 
+  const plantFromFile = new PlantFromFile();
+  plantFromFile.position.set(-75, 75, -75);
+  plantFromFile.addPhysics();
+  plantFromFile.addSound();
+  window.scene.add(plantFromFile);
+
   const floor = new Floor();
   floor.position.set(0, 0, 0);
-  floor.
   window.scene.add(floor);
 
   const ambientLight = new THREE.AmbientLight(0xffffff);

@@ -8,15 +8,17 @@ import Stats from 'stats';
 import Television from './objects/Television.js';
 import TelevisionFromFile from './objects/TelevisionFromFile.js';
 import TableFromFile from './objects/TableFromFile.js';
-import PlantFromFile from './objects/PlantFromFile.js';
 import Floor from './objects/Floor.js';
 import Physics from './physics/Physics.js';
 import Brunnen from "./objects/Brunnen.js";
+import Ground from "./objects/Ground.js";
+import Grass from "./objects/Grass.js";
 
 // Event FUNKTIONEN!!!1!11!!!
 import {updateAspectRatio} from './eventfunctions/updateAspectRatio.js';
 import {executeRaycast} from './eventfunctions/executeRaycast.js';
 import {keyDownAction, keyUpAction} from './eventfunctions/executeKeyAction.js';
+
 
 function main() {
 
@@ -43,41 +45,50 @@ function main() {
   brunnen.position.set(0,0,0);
   window.scene.add(brunnen);
 
-  const television = new Television();
+/*  const television = new Television();
   television.position.set(-30, 55.8, 0);
   television.rotation.set(0, THREE.MathUtils.degToRad(10), 0);
   television.addPhysics();
-  window.scene.add(television);
+  window.scene.add(television);*/
 
-  const televisionFromFile = new TelevisionFromFile();
+/*  const televisionFromFile = new TelevisionFromFile();
   televisionFromFile.position.set(30, 55.8, 0);
   televisionFromFile.rotation.set(0, THREE.MathUtils.degToRad(-10), 0);
   televisionFromFile.addPhysics();
-  window.scene.add(televisionFromFile);
+  window.scene.add(televisionFromFile);*/
 
   const tableFromFile = new TableFromFile();
   tableFromFile.position.set(0, 0, 0);
   tableFromFile.addPhysics();
   window.scene.add(tableFromFile);
 
-  const plantFromFile = new PlantFromFile();
+/*  const plantFromFile = new PlantFromFile();
   plantFromFile.position.set(-75, 75, -75);
   plantFromFile.addPhysics();
   plantFromFile.addSound();
-  window.scene.add(plantFromFile);
+  window.scene.add(plantFromFile);*/
 
-  const floor = new Floor();
+/*  const floor = new Floor();
   floor.position.set(0, 0, 0);
-  window.scene.add(floor);
+  window.scene.add(floor);*/
+
+  const ground = new Ground();
+  ground.position.set(0,-26,0);
+  window.scene.add(ground);
+
+  const grass = new Grass();
+  grass.position.set(-110,25,50);
+  /*grass.addPhysics();*/
+  window.scene.add(grass);
 
   const ambientLight = new THREE.AmbientLight(0xffffff);
-  ambientLight.intensity = 0.5;
+  ambientLight.intensity = 0.7;
   window.scene.add(ambientLight);
 
   const spotLight = new THREE.SpotLight(0xffffff);
-  spotLight.position.set(100, 200, 200);
+  spotLight.position.set(100, 400, 200);
   spotLight.intensity = 0.8;
-  spotLight.target = floor;
+  spotLight.target = ground;
   spotLight.angle = THREE.MathUtils.degToRad(30);
   spotLight.penumbra = 1.0;
   spotLight.castShadow = true;
@@ -109,15 +120,15 @@ function main() {
 
     const delta = clock.getDelta();
 
-    television.animations.forEach(function (animation) {
+    /*television.animations.forEach(function (animation) {
       animation.update(delta);
-    });
+    });*/
 
     TWEEN.update();
 
-    if (televisionFromFile.animationMixer !== null) {
+    /*if (televisionFromFile.animationMixer !== null) {
       televisionFromFile.animationMixer.update(delta);
-    }
+    }*/
 
     window.physics.update(delta);
 
